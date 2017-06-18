@@ -1,0 +1,7 @@
+[Unit]
+Description=setpci for gmux_backlight. Otherwise changing backlight won't work.
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/setpci -v -H1 -s 00:01.00 BRIDGE_CONTROL=0
+RemainAfterExit=yes
